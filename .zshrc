@@ -67,6 +67,12 @@ export PATH="$HOME/.local/bin:$PATH"
 # =============================================================================
 # Disable zoxide in Claude Code (causes issues with cd)
 [[ -z "$CLAUDECODE" ]] && eval "$(zoxide init --cmd cd zsh)"
+
+# Preview file content using bat (https://github.com/sharkdp/bat)
+export FZF_CTRL_T_OPTS="
+  --walker-skip .git,node_modules,target
+  --preview 'bat -n --color=always {}'
+  --bind 'ctrl-/:change-preview-window(down|hidden|)'"
 source <(fzf --zsh)
 
 # bun completions
@@ -75,7 +81,8 @@ source <(fzf --zsh)
 # =============================================================================
 # Aliases
 # =============================================================================
-alias c='claude'
+alias c='clear'
+alias cc='claude'
 alias cds='claude --dangerously-skip-permissions'
 alias p='pnpm'
 alias b='bun'
@@ -86,15 +93,37 @@ alias ls='ls --color=auto'
 alias ll='ls -lah'
 alias la='ls -A'
 alias l='ls -CF'
-alias gst='git status'
-alias gco='git checkout'
-alias gcm='git commit -m'
-alias gp='git push'
-alias gl='git pull'
-alias gd='git diff'
-alias glog='git log --oneline --graph --decorate -10'
 alias vim='nvim'
-alias c='clear'
+alias v='nvim'
+
+# Git aliases
+alias g='git'
+alias gs='git status'
+alias ga='git add'
+alias gaa='git add --all'
+alias gc='git commit'
+alias gcm='git commit -m'
+alias gca='git commit --amend'
+alias gco='git checkout'
+alias gcb='git checkout -b'
+alias gd='git diff'
+alias gds='git diff --staged'
+alias gp='git push'
+alias gpf='git push --force-with-lease'
+alias gl='git pull'
+alias glr='git pull --rebase'
+alias gb='git branch'
+alias gba='git branch -a'
+alias gbd='git branch -d'
+alias glog='git log --oneline --graph --decorate -10'
+alias gla='git log --oneline --graph --decorate --all'
+alias gst='git stash'
+alias gstp='git stash pop'
+alias gm='git merge'
+alias grb='git rebase'
+alias grbi='git rebase -i'
+alias grs='git restore'
+alias grss='git restore --staged'
 
 # =============================================================================
 # Load Secrets (if exists)
@@ -153,3 +182,7 @@ function y() {
 	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
 	rm -f -- "$tmp"
 }
+
+
+# Added by Hades
+export PATH="$PATH:$HOME/.hades/bin"
