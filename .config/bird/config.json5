@@ -1,0 +1,7 @@
+{
+  // Auth tokens extracted from openclaw browser session
+  // These will expire eventually - re-login when needed
+  authToken: "aa3f3c23d5d3f037aed7073b269215c1e6e7554c",
+  ct0: "70537a57652bc578de2fced93d18ec6437f78e25b7927c1807888fe6222c2184f742bb93e185db697885cda176e32a0794a794b5658df8b4f423faa46d835c3abf5a4973c41c1c62c2afe4f61eaa2106",
+  timeoutMs: 30000
+}

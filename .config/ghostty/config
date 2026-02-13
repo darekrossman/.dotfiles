@@ -1,0 +1,25 @@
+theme = light:Catppuccin Latte,dark:Catppuccin Mocha
+
+font-family = "JetBrains Nerd Font"
+font-size = 13
+adjust-underline-position = 4
+font-feature = -calt
+font-feature = -liga
+
+mouse-scroll-multiplier = 1
+window-padding-balance = false
+shell-integration-features = no-cursor,sudo,no-title
+window-save-state = always
+macos-titlebar-style = hidden
+window-colorspace = "display-p3"
+window-padding-x = 4,2
+window-padding-y = 8,0
+window-decoration = auto
+quick-terminal-animation-duration = 0
+desktop-notifications=true 
+quick-terminal-screen=mouse
+
+keybind = cmd+s>r=reload_config
+keybind = cmd+s>x=close_surface
+keybind = cmd+s>n=new_window
+keybind = global:cmd+backquote=toggle_quick_terminal

@@ -1,0 +1,16 @@
+.DS_Store
+.claude/
+
+# Installed by plugin managers at runtime
+tmux/plugins/
+nvim/pack/
+
+# Installed Raycast extensions (compiled/generated)
+raycast/extensions/
+
+# Secrets/tokens
+github-copilot/apps.json
+raycast/config.json
+
+# Cache/generated
+simple-update-notifier/
