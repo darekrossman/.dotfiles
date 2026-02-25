@@ -1,5 +1,6 @@
 return {
   "nvim-lualine/lualine.nvim",
+  enabled = false,
   event = "VeryLazy",
   opts = function(_, opts)
     -- Clean flat look: remove all separators (triangles)

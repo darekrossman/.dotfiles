@@ -68,8 +68,12 @@ export PATH="$HOME/.local/bin:$PATH"
 # Disable zoxide in Claude Code (causes issues with cd)
 [[ -z "$CLAUDECODE" ]] && eval "$(zoxide init --cmd cd zsh)"
 
+export BAT_THEME="ansi"
+
 # Preview file content using bat (https://github.com/sharkdp/bat)
 export FZF_CTRL_T_OPTS="
+  --style minimal
+  --tmux 80%
   --walker-skip .git,node_modules,target
   --preview 'bat -n --color=always {}'
   --bind 'ctrl-/:change-preview-window(down|hidden|)'"
@@ -95,6 +99,8 @@ alias la='ls -A'
 alias l='ls -CF'
 alias vim='nvim'
 alias v='nvim'
+
+alias ez='eza --group-directories-first --icons -l -a --git'
 
 # Git aliases
 alias g='git'
@@ -124,6 +130,9 @@ alias grb='git rebase'
 alias grbi='git rebase -i'
 alias grs='git restore'
 alias grss='git restore --staged'
+
+alias ien='~/.config/tmux/three-pane-layout.sh'
+alias cien='~/.config/tmux/three-pane-layout.sh "claude --dangerously-skip-permissions"'
 
 # =============================================================================
 # Load Secrets (if exists)
@@ -186,3 +195,4 @@ function y() {
 
 # Added by Hades
 export PATH="$PATH:$HOME/.hades/bin"
+export FPATH="~/.dotfiles/.config/eza/completions/zsh:$FPATH"
